@@ -62,7 +62,7 @@ const Navbar = () => {
           </div>
 
           <div className="md:flex md:items-center md:gap-12">
-            <nav aria-label="Global" className="hidden md:block">
+            <nav aria-label="Global" className="hidden sm:block">
               <ul className="flex items-center gap-6 text-md font-bold">
                 <li>
                   <button
@@ -115,19 +115,21 @@ const Navbar = () => {
                     <IconBrandYoutube className="text-gray-500" size={30} stroke={2}/>
                   </a>
                 </li>
+                <li>
+                  <div className="flex items-center gap-4">
+                    <div className="sm:flex sm:gap-4">
+                      <button
+                        className="rounded-md cursor-pointer text-white bg-red-600 px-5 py-2.5 text-sm font-medium shadow-sm"
+                        onClick={handleSignOut}>
+                        Terminar sessão
+                      </button>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </nav>
 
-            <div className="flex items-center gap-4">
-              <div className="sm:flex sm:gap-4">
-                <button
-                  className="rounded-md cursor-pointer text-white bg-red-600 px-5 py-2.5 text-sm font-medium shadow-sm"
-                  onClick={handleSignOut}
-                >
-                  Terminar sessão
-                </button>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

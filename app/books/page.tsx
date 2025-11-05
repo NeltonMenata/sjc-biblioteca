@@ -30,7 +30,7 @@ import textToPascalCase from "../utils/text_to_pascal_case";
 let idCurrentReader = "";
 
 function Books() {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]);//Lista de livros adicionados recentemente
   const [loading, setLoading] = useState(true); // Estado para controle do carregamento
 
   const [index, setIndex] = useState(0);
@@ -39,8 +39,8 @@ function Books() {
     setIndex(n);
   }
 
-  const [orders, setOrders] = useState([]);
-  const [ordersAll, setOrdersAll] = useState([]);
+  const [orders, setOrders] = useState([]);//Pedido de um livro
+  const [ordersAll, setOrdersAll] = useState([]);//Todos os pedidos de livros
 
   const [finding, setFinding] = useState(false);
   const [findBooks, setFindBooks] = useState([]);
@@ -251,7 +251,11 @@ function Books() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "books"));
+        const q = query(
+          collection(db, "books"),
+          limit(10)
+        );
+        const querySnapshot = await getDocs(q);
 
         const getBooks = querySnapshot.docs.map((doc) => {
           return {
@@ -315,7 +319,7 @@ function Books() {
         </h2>
       </div>
       <br />
-      <div className="flex w-full gap-2.5">
+      <div className="grid grid-cols-[3fr_1fr] w-full gap-2.5">
         <div className="flex-grow ">
           {index === 0 ? (
             <div className="">
