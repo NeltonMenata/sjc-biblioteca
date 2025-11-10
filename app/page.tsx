@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <div className="h-full flex flex-col items-center justify-center">
       <Background />
-      <div className=" border-2 border-blue-400 p-8 rounded-xl bg-zinc-900 bg-opacity-70">
+      <div className=" border-2 border-blue-400 p-4 sm:p-6 md:p-8 rounded-xl bg-zinc-900 bg-opacity-70">
         <h2 className="text-white text-lg font-normal">
         {
         loading && 'Carregando o nome...'
