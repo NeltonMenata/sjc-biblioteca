@@ -37,13 +37,13 @@ export default function Home() {
           name
         }
         </h2>
-        <h1 className="text-4xl font-bold text-blue-400 ">
+        <h1 className="text-xl font-bold text-blue-400 sm:text-2xl md:text-3xl xl:text-4xl">
           Bem-vindo a Biblioteca Escolar
         </h1>
         <p className="text-lg font-extrabold text-gray-400 mt-4">
           Gerencie livros, usuários e empréstimos com facilidade.
         </p>
-        <div className="mt-8 space-x-4 font-bold">
+        <div className="mt-8 space-x-4 font-bold flex gap-4 flex-col items-center justify-center  sm:flex-row sm:gap-1">
           <Link href="/books">
             <button className="px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-teal-600"
             onClick={(e)=>{
