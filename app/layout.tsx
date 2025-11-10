@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           ) : isLoggedIn ? (
-            <div className='max-w-screen-xl mx-auto w-full'>
+            <div className='max-w-screen-xl mx-auto w-full h-full'>
     {
             // Se o usuário estiver logado, exibe os filhos
       children
